@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "65706449937",
+    "project_id": "cadastrofirestore-df2bb",
+    "storage_bucket": "cadastrofirestore-df2bb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65706449937:android:221fc4acd5e22a3a5da5b0",
+        "android_client_info": {
+          "package_name": "com.kennedy.cadastrofirestore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyhcf_I_MLYmH4ct4UbmgXRbBbPVJsd6I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
