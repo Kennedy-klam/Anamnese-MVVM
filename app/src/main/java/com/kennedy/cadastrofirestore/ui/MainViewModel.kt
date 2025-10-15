@@ -4,7 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kennedy.cadastrofirestore.data.User // Verifique se o import está correto
+import com.kennedy.cadastrofirestore.data.HealthHistory
+import com.kennedy.cadastrofirestore.data.MentalState
+import com.kennedy.cadastrofirestore.data.User
 import com.kennedy.cadastrofirestore.domain.UserRepository
 import kotlinx.coroutines.launch
 
@@ -18,20 +20,18 @@ class MainViewModel : ViewModel() {
 
     private val userRepository = UserRepository()
 
-    // LiveData para o estado do salvamento (igual antes)
     private val _saveState = MutableLiveData<SaveState>()
     val saveState: LiveData<SaveState> = _saveState
 
-    // NOVO: LiveData para guardar os dados do formulário entre as etapas
     private val _formData = MutableLiveData<User>(User())
     val formData: LiveData<User> = _formData
 
-    // ATUALIZADO: A função agora pega os dados direto do _formData
     fun saveUser() {
-        val user = _formData.value ?: return // Pega o usuário atual
+        val user = _formData.value ?: return
 
-        if (user.name.isBlank() || user.email.isBlank() || user.phone.isBlank() || user.address.isBlank()) {
-            _saveState.value = SaveState.Error("Por favor, preencha todos os campos.")
+        // Adicione aqui validações mais robustas se necessário
+        if (user.name.isBlank() || user.email.isBlank()) {
+            _saveState.value = SaveState.Error("Por favor, preencha todos os campos das etapas anteriores.")
             return
         }
 
@@ -46,7 +46,6 @@ class MainViewModel : ViewModel() {
         }
     }
 
-    // NOVO: Funções para atualizar os dados a partir dos Fragments
     fun updateStepOneData(name: String, email: String) {
         val currentUser = _formData.value ?: User()
         _formData.value = currentUser.copy(name = name, email = email)
@@ -55,5 +54,18 @@ class MainViewModel : ViewModel() {
     fun updateStepTwoData(phone: String, address: String) {
         val currentUser = _formData.value ?: User()
         _formData.value = currentUser.copy(phone = phone, address = address)
+    }
+
+    fun updateHealthHistory(newHistory: HealthHistory) {
+        val currentUser = _formData.value ?: User()
+        _formData.value = currentUser.copy(healthHistory = newHistory)
+    }
+
+    fun updateMentalState(newMentalState: MentalState) {
+        val currentUser = _formData.value ?: User()
+        val currentHealthHistory = currentUser.healthHistory
+        _formData.value = currentUser.copy(
+            healthHistory = currentHealthHistory.copy(mentalState = newMentalState)
+        )
     }
 }

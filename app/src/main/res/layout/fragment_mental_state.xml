@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MentalStateFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Etapa 4 de 4: Estado Mental"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Orientação espacial:"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="8dp">
+            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:id="@+id/tvTimeLabel" android:text="Tempo (0-5):" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvTimeScore" android:text="0" tools:text="5" android:textSize="16sp" android:textStyle="bold" android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/tvNotaLabel1" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvNotaLabel1" android:text="Nota" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <CheckBox android:id="@+id/cbTimeMonth" android:text="Mês" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <CheckBox android:id="@+id/cbTimeDay" android:text="Dia" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <CheckBox android:id="@+id/cbTimeYear" android:text="Ano" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <CheckBox android:id="@+id/cbTimeWeekDay" android:text="Dia da semana" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <CheckBox android:id="@+id/cbTimeApproximate" android:text="Que horas são aproximadamente" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="8dp">
+            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="Local (0-5):" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvLocationScore" android:text="0" tools:text="5" android:textSize="16sp" android:textStyle="bold" android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/tvNotaLabel2" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvNotaLabel2" android:text="Nota" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <CheckBox android:id="@+id/cbLocationState" android:text="Estado" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <CheckBox android:id="@+id/cbLocationCity" android:text="Cidade" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <CheckBox android:id="@+id/cbLocationNeighborhood" android:text="Bairro" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <CheckBox android:id="@+id/cbLocationPlace" android:text="Local" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+                <CheckBox android:id="@+id/cbLocationCountry" android:text="País" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="8dp">
+            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="Repita as palavras (0-3):" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvWordsScore" android:text="0" tools:text="3" android:textSize="16sp" android:textStyle="bold" android:layout_marginEnd="8dp" app:layout_constraintEnd_toStartOf="@+id/tvNotaLabel3" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:id="@+id/tvNotaLabel3" android:text="Nota" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <GridLayout android:columnCount="3" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <CheckBox android:id="@+id/cbWordCar" android:text="Carro" android:layout_columnWeight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <CheckBox android:id="@+id/cbWordVase" android:text="Vaso" android:layout_columnWeight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                    <CheckBox android:id="@+id/cbWordBrick" android:text="Tijolo" android:layout_columnWeight="1" android:layout_width="0dp" android:layout_height="wrap_content"/>
+                </GridLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardCornerRadius="8dp">
+            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="O senhor faz cálculos? (0-5):" android:id="@+id/tvMathLabel" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" android:layout_width="0dp" app:layout_constraintEnd_toStartOf="@+id/tilMathScore" android:layout_height="wrap_content" android:layout_marginEnd="8dp"/>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/tilMathScore"
+                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:hint="Nota"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+                        <AutoCompleteTextView
+                            android:id="@+id/autoCompleteMathScore"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="none" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <RadioGroup android:id="@+id/rgMath" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    <RadioButton android:id="@+id/rbMathYes" android:text="Sim" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioButton android:id="@+id/rbMathNo" android:text="Não" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                </RadioGroup>
+                <TextView
+                    android:id="@+id/tvMathInstructionYes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Instrução: “Quanto é 100-7? 93-7? 86-7? 79-7? 72-7? 65?”"
+                    android:visibility="gone"
+                    tools:visibility="visible"/>
+                <TextView
+                    android:id="@+id/tvMathInstructionNo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Instrução: “Soletre a palavra MUNDO de trás pra frente (O D N U M)”"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="24dp">
+            <Button
+                android:id="@+id/buttonBack"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Voltar" />
+            <Button
+                android:id="@+id/buttonSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Salvar" />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -7,13 +7,15 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 class StepsPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
     override fun getItemCount(): Int {
-        return 2 // Temos 2 etapas
+        return 4 // ATUALIZADO
     }
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> StepOneFragment() // Posição 0 é a Etapa 1
-            1 -> StepTwoFragment() // Posição 1 é a Etapa 2
+            0 -> StepOneFragment()
+            1 -> StepTwoFragment()
+            2 -> HealthHistoryFragment()
+            3 -> MentalStateFragment() // NOVO
             else -> throw IllegalStateException("Posição de fragmento inválida")
         }
     }
