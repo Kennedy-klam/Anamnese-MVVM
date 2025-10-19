@@ -1,3 +1,27 @@
 <resources>
     <string name="app_name">CadastroFirestore</string>
+
+    <string name="vision_hint">Visão</string>
+    <string name="hearing_hint">Audição</string>
+
+    <string name="urinary_continence">Continência urinária:</string>
+    <string name="fecal_continence">Continência fecal:</string>
+    <string name="sleep">Sono:</string>
+    <string name="orthosis_use">Uso de órtese:</string>
+    <string name="prosthesis_use">Uso de prótese:</string>
+    <string name="fall_last_12_months">Queda nos últimos 12 meses:</string>
+    <string name="smoker">Fuma:</string>
+    <string name="alcoholic">Etilista:</string>
+
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="normal">Normal</string>
+    <string name="disorders">Distúrbios</string>
+
+    <string name="date_hint">Data</string>
+    <string name="which_hint">Quais?</string>
+    <string name="fall_count_hint">Quantas:</string>
+    <string name="stopped_how_long_hint">Se parou, a quanto tempo?</string>
+
+    <string name="advance_button">Avançar</string>
 </resources>

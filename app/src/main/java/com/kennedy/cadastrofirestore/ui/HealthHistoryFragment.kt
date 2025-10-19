@@ -52,7 +52,7 @@ class HealthHistoryFragment : Fragment() {
         binding.rgSleep.setOnCheckedChangeListener { _, id -> binding.etSleepDetails.isVisible = id == R.id.rbSleepDisorder }
         binding.rgOrthosis.setOnCheckedChangeListener { _, id -> binding.etOrthosisDetails.isVisible = id == R.id.rbOrthosisYes }
         binding.rgProsthesis.setOnCheckedChangeListener { _, id -> binding.etProsthesisDetails.isVisible = id == R.id.rbProsthesisYes }
-        binding.rgFall.setOnCheckedChangeListener { _, id -> binding.tilFallCount.isVisible = id == R.id.rbFallYes }
+        binding.rgFall.setOnCheckedChangeListener { _, id -> binding.llFallDetails.isVisible = id == R.id.rbFallYes }
         binding.rgSmoker.setOnCheckedChangeListener { _, id -> binding.etSmokerStoppedTime.isVisible = id == R.id.rbSmokerNo }
         binding.rgAlcoholic.setOnCheckedChangeListener { _, id -> binding.etAlcoholicStoppedTime.isVisible = id == R.id.rbAlcoholicNo }
 
