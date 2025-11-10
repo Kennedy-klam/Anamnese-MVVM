@@ -46,30 +46,72 @@ class HealthHistoryFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        // Lógica de visibilidade condicional
-        binding.rgUrinary.setOnCheckedChangeListener { _, id -> binding.etUrinaryDate.isVisible = id == R.id.rbUrinaryYes }
-        binding.rgFecal.setOnCheckedChangeListener { _, id -> binding.etFecalDate.isVisible = id == R.id.rbFecalYes }
-        binding.rgSleep.setOnCheckedChangeListener { _, id -> binding.etSleepDetails.isVisible = id == R.id.rbSleepDisorder }
-        binding.rgOrthosis.setOnCheckedChangeListener { _, id -> binding.etOrthosisDetails.isVisible = id == R.id.rbOrthosisYes }
-        binding.rgProsthesis.setOnCheckedChangeListener { _, id -> binding.etProsthesisDetails.isVisible = id == R.id.rbProsthesisYes }
-        binding.rgFall.setOnCheckedChangeListener { _, id -> binding.llFallDetails.isVisible = id == R.id.rbFallYes }
-        binding.rgSmoker.setOnCheckedChangeListener { _, id -> binding.etSmokerStoppedTime.isVisible = id == R.id.rbSmokerNo }
-        binding.rgAlcoholic.setOnCheckedChangeListener { _, id -> binding.etAlcoholicStoppedTime.isVisible = id == R.id.rbAlcoholicNo }
+        // --- Lógica de visibilidade condicional ATUALIZADA ---
 
-        // Adiciona um listener genérico para atualizar o ViewModel em qualquer mudança
-        val textWatcher = { _: CharSequence?, _: Int, _: Int, _: Int -> updateViewModel() }
-        binding.autoCompleteVision.doOnTextChanged(textWatcher)
-        binding.autoCompleteHearing.doOnTextChanged(textWatcher)
-        binding.etUrinaryDate.doOnTextChanged(textWatcher)
-        binding.etFecalDate.doOnTextChanged(textWatcher)
-        binding.etSleepDetails.doOnTextChanged(textWatcher)
-        binding.etOrthosisDetails.doOnTextChanged(textWatcher)
-        binding.etProsthesisDetails.doOnTextChanged(textWatcher)
-        binding.autoCompleteFallCount.doOnTextChanged(textWatcher)
-        binding.etSmokerStoppedTime.doOnTextChanged(textWatcher)
-        binding.etAlcoholicStoppedTime.doOnTextChanged(textWatcher)
+        // Continência Urinária
+        binding.rgUrinary.setOnCheckedChangeListener { _, checkedId ->
+            binding.llUrinaryDate.isVisible = checkedId == R.id.rbUrinaryYes
+            updateViewModel()
+        }
 
-        // Botões de Navegação
+        // Continência Fecal
+        binding.rgFecal.setOnCheckedChangeListener { _, checkedId ->
+            binding.llFecalDate.isVisible = checkedId == R.id.rbFecalYes
+            updateViewModel()
+        }
+
+        // Sono
+        binding.rgSleep.setOnCheckedChangeListener { _, checkedId ->
+            binding.llSleepDetails.isVisible = checkedId == R.id.rbSleepDisorder
+            updateViewModel()
+        }
+
+        // Órtese
+        binding.rgOrthosis.setOnCheckedChangeListener { _, checkedId ->
+            binding.llOrthosisDetails.isVisible = checkedId == R.id.rbOrthosisYes
+            updateViewModel()
+        }
+
+        // Prótese
+        binding.rgProsthesis.setOnCheckedChangeListener { _, checkedId ->
+            binding.llProsthesisDetails.isVisible = checkedId == R.id.rbProsthesisYes
+            updateViewModel()
+        }
+
+        // Queda (Já estava correto)
+        binding.rgFall.setOnCheckedChangeListener { _, checkedId ->
+            binding.llFallDetails.isVisible = checkedId == R.id.rbFallYes
+            updateViewModel()
+        }
+
+        // Fuma
+        binding.rgSmoker.setOnCheckedChangeListener { _, checkedId ->
+            binding.llSmokerStoppedTime.isVisible = checkedId == R.id.rbSmokerNo
+            updateViewModel()
+        }
+
+        // Etilista
+        binding.rgAlcoholic.setOnCheckedChangeListener { _, checkedId ->
+            binding.llAlcoholicStoppedTime.isVisible = checkedId == R.id.rbAlcoholicNo
+            updateViewModel()
+        }
+
+
+        // --- Listeners para salvar o texto digitado (doOnTextChanged) ---
+        // (Eles ainda leem do EditText, o que está correto)
+        binding.autoCompleteVision.doOnTextChanged { _, _, _, _ -> updateViewModel() }
+        binding.autoCompleteHearing.doOnTextChanged { _, _, _, _ -> updateViewModel() }
+        binding.etUrinaryDate.doOnTextChanged { _, _, _, _ -> updateViewModel() }
+        binding.etFecalDate.doOnTextChanged { _, _, _, _ -> updateViewModel() }
+        binding.etSleepDetails.doOnTextChanged { _, _, _, _ -> updateViewModel() }
+        binding.etOrthosisDetails.doOnTextChanged { _, _, _, _ -> updateViewModel() }
+        binding.etProsthesisDetails.doOnTextChanged { _, _, _, _ -> updateViewModel() }
+        binding.autoCompleteFallCount.doOnTextChanged { _, _, _, _ -> updateViewModel() }
+        binding.etSmokerStoppedTime.doOnTextChanged { _, _, _, _ -> updateViewModel() }
+        binding.etAlcoholicStoppedTime.doOnTextChanged { _, _, _, _ -> updateViewModel() }
+
+
+        // --- Botões de Navegação ---
         binding.buttonNext.setOnClickListener {
             updateViewModel() // Garante que os dados sejam salvos no ViewModel
             (activity as? MainActivity)?.navigateToNextPage()
@@ -81,33 +123,34 @@ class HealthHistoryFragment : Fragment() {
     }
 
     private fun updateViewModel() {
+        // Pega todos os valores da UI e cria um novo objeto HealthHistory
         val history = HealthHistory(
             vision = binding.autoCompleteVision.text.toString(),
             hearing = binding.autoCompleteHearing.text.toString(),
 
             urinaryIncontinence = binding.rbUrinaryYes.isChecked,
-            urinaryIncontinenceDate = binding.etUrinaryDate.text.toString().takeIf { binding.etUrinaryDate.isVisible },
+            urinaryIncontinenceDate = binding.etUrinaryDate.text.toString().takeIf { binding.llUrinaryDate.isVisible },
 
             fecalIncontinence = binding.rbFecalYes.isChecked,
-            fecalIncontinenceDate = binding.etFecalDate.text.toString().takeIf { binding.etFecalDate.isVisible },
+            fecalIncontinenceDate = binding.etFecalDate.text.toString().takeIf { binding.llFecalDate.isVisible },
 
             sleep = if (binding.rbSleepNormal.isChecked) "Normal" else "Distúrbios",
-            sleepDisturbanceDetails = binding.etSleepDetails.text.toString().takeIf { binding.etSleepDetails.isVisible },
+            sleepDisturbanceDetails = binding.etSleepDetails.text.toString().takeIf { binding.llSleepDetails.isVisible },
 
             usesOrthosis = binding.rbOrthosisYes.isChecked,
-            orthosisDetails = binding.etOrthosisDetails.text.toString().takeIf { binding.etOrthosisDetails.isVisible },
+            orthosisDetails = binding.etOrthosisDetails.text.toString().takeIf { binding.llOrthosisDetails.isVisible },
 
             usesProsthesis = binding.rbProsthesisYes.isChecked,
-            prosthesisDetails = binding.etProsthesisDetails.text.toString().takeIf { binding.etProsthesisDetails.isVisible },
+            prosthesisDetails = binding.etProsthesisDetails.text.toString().takeIf { binding.llProsthesisDetails.isVisible },
 
             hadFallLast12Months = binding.rbFallYes.isChecked,
-            fallCount = binding.autoCompleteFallCount.text.toString().takeIf { binding.tilFallCount.isVisible },
+            fallCount = binding.autoCompleteFallCount.text.toString().takeIf { binding.llFallDetails.isVisible },
 
             isSmoker = binding.rbSmokerYes.isChecked,
-            smokingStoppedTime = binding.etSmokerStoppedTime.text.toString().takeIf { binding.etSmokerStoppedTime.isVisible },
+            smokingStoppedTime = binding.etSmokerStoppedTime.text.toString().takeIf { binding.llSmokerStoppedTime.isVisible },
 
             isAlcoholic = binding.rbAlcoholicYes.isChecked,
-            alcoholStoppedTime = binding.etAlcoholicStoppedTime.text.toString().takeIf { binding.etAlcoholicStoppedTime.isVisible }
+            alcoholStoppedTime = binding.etAlcoholicStoppedTime.text.toString().takeIf { binding.llAlcoholicStoppedTime.isVisible }
         )
         viewModel.updateHealthHistory(history)
     }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_background_light"
+    android:background="@color/cinza"
     tools:context=".ui.HealthHistoryFragment">
 
     <LinearLayout
@@ -20,12 +20,15 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilVision"
-                style="@style/Widget.App.Dropdown"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_marginEnd="4dp"
-                android:hint="Visão">
+                android:hint="Visão"
+                android:textColorHint="@color/white"
+                app:boxBackgroundColor="@color/verde"
+                app:endIconTint="@color/white">
                 <AutoCompleteTextView
                     android:id="@+id/autoCompleteVision"
                     android:layout_width="match_parent"
@@ -36,12 +39,15 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilHearing"
-                style="@style/Widget.App.Dropdown"
+                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
                 android:layout_marginStart="4dp"
-                android:hint="Audição">
+                android:hint="Audição"
+                android:textColorHint="@color/white"
+                app:boxBackgroundColor="@color/verde"
+                app:endIconTint="@color/white">
                 <AutoCompleteTextView
                     android:id="@+id/autoCompleteHearing"
                     android:layout_width="match_parent"
@@ -58,58 +64,85 @@
             android:columnCount="2">
 
             <com.google.android.material.card.MaterialCardView
-                style="@style/Widget.App.Card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:layout_marginEnd="4dp">
+                android:layout_marginEnd="4dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="12dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Continência urinária:" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Continência urinária:" android:textColor="@color/preto_claro" />
                     <RadioGroup android:id="@+id/rgUrinary" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                        <RadioButton android:id="@+id/rbUrinaryYes" android:text="Sim" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <RadioButton android:id="@+id/rbUrinaryNo" android:text="Não" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                        <RadioButton android:id="@+id/rbUrinaryYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioButton android:id="@+id/rbUrinaryNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
                     </RadioGroup>
-                    <EditText android:id="@+id/etUrinaryDate" style="@style/Widget.App.EditText.Underline" android:hint="Data:" android:visibility="gone" tools:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:id="@+id/llUrinaryDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+                        <EditText android:id="@+id/etUrinaryDate" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Data:" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                style="@style/Widget.App.Card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:layout_marginStart="4dp">
+                android:layout_marginStart="4dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp">
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="12dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Continência fecal:" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Continência fecal:" android:textColor="@color/preto_claro"/>
                     <RadioGroup android:id="@+id/rgFecal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                        <RadioButton android:id="@+id/rbFecalYes" android:text="Sim" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <RadioButton android:id="@+id/rbFecalNo" android:text="Não" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                        <RadioButton android:id="@+id/rbFecalYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioButton android:id="@+id/rbFecalNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
                     </RadioGroup>
-                    <EditText android:id="@+id/etFecalDate" style="@style/Widget.App.EditText.Underline" android:hint="Data:" android:visibility="gone" tools:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:id="@+id/llFecalDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+                        <EditText android:id="@+id/etFecalDate" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Data:" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </GridLayout>
 
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.App.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp">
             <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:text="Sono:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:text="Sono:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
                 <RadioGroup android:id="@+id/rgSleep" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/rbSleepNormal" android:text="Normal" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioButton android:id="@+id/rbSleepDisorder" android:text="Distúrbios" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    <RadioButton android:id="@+id/rbSleepNormal" android:text="Normal" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioButton android:id="@+id/rbSleepDisorder" android:text="Distúrbios" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
                 </RadioGroup>
-                <EditText android:id="@+id/etSleepDetails" style="@style/Widget.App.EditText.Underline" android:hint="Quais?" android:visibility="gone" tools:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:id="@+id/llSleepDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+                    <EditText android:id="@+id/etSleepDetails" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Quais?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -120,48 +153,67 @@
             android:columnCount="2">
 
             <com.google.android.material.card.MaterialCardView
-                style="@style/Widget.App.Card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:layout_marginEnd="4dp">
+                android:layout_marginEnd="4dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp">
                 <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:text="Uso de órtese:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:text="Uso de órtese:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
                     <RadioGroup android:id="@+id/rgOrthosis" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                        <RadioButton android:id="@+id/rbOrthosisYes" android:text="Sim" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <RadioButton android:id="@+id/rbOrthosisNo" android:text="Não" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                        <RadioButton android:id="@+id/rbOrthosisYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioButton android:id="@+id/rbOrthosisNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
                     </RadioGroup>
-                    <EditText android:id="@+id/etOrthosisDetails" style="@style/Widget.App.EditText.Underline" android:hint="Quais?" android:visibility="gone" tools:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:id="@+id/llOrthosisDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+                        <EditText android:id="@+id/etOrthosisDetails" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Quais?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                style="@style/Widget.App.Card"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_columnWeight="1"
-                android:layout_marginStart="4dp">
+                android:layout_marginStart="4dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp">
                 <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:text="Uso de prótese:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <TextView android:text="Uso de prótese:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
                     <RadioGroup android:id="@+id/rgProsthesis" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                        <RadioButton android:id="@+id/rbProsthesisYes" android:text="Sim" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <RadioButton android:id="@+id/rbProsthesisNo" android:text="Não" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                        <RadioButton android:id="@+id/rbProsthesisYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioButton android:id="@+id/rbProsthesisNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
                     </RadioGroup>
-                    <EditText android:id="@+id/etProsthesisDetails" style="@style/Widget.App.EditText.Underline" android:hint="Quais?" android:visibility="gone" tools:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:id="@+id/llProsthesisDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+                        <EditText android:id="@+id/etProsthesisDetails" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Quais?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
         </GridLayout>
 
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.App.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp">
             <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:text="Queda nos últimos 12 meses:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:text="Queda nos últimos 12 meses:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
                 <RadioGroup android:id="@+id/rgFall" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/rbFallYes" android:text="Sim" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioButton android:id="@+id/rbFallNo" android:text="Não" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    <RadioButton android:id="@+id/rbFallYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioButton android:id="@+id/rbFallNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
                 </RadioGroup>
 
                 <LinearLayout
@@ -176,13 +228,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Quantas:"
+                        android:textColor="@color/preto_claro"
                         android:layout_marginEnd="8dp"/>
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/tilFallCount"
-                        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_weight="1"
+                        app:boxBackgroundColor="@color/white">
                         <AutoCompleteTextView
                             android:id="@+id/autoCompleteFallCount"
                             android:layout_width="match_parent"
@@ -194,32 +248,50 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.App.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp">
             <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:text="Fuma:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:text="Fuma:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
                 <RadioGroup android:id="@+id/rgSmoker" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/rbSmokerYes" android:text="Sim" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioButton android:id="@+id/rbSmokerNo" android:text="Não" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    <RadioButton android:id="@+id/rbSmokerYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioButton android:id="@+id/rbSmokerNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
                 </RadioGroup>
-                <EditText android:id="@+id/etSmokerStoppedTime" style="@style/Widget.App.EditText.Underline" android:hint="Se parou, há quanto tempo?" android:visibility="gone" tools:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:id="@+id/llSmokerStoppedTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+                    <EditText android:id="@+id/etSmokerStoppedTime" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Se parou, há quanto tempo?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
-            style="@style/Widget.App.Card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="12dp">
             <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:text="Etilista:" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                <TextView android:text="Etilista:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
                 <RadioGroup android:id="@+id/rgAlcoholic" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/rbAlcoholicYes" android:text="Sim" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioButton android:id="@+id/rbAlcoholicNo" android:text="Não" style="@style/Widget.App.RadioButton" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    <RadioButton android:id="@+id/rbAlcoholicYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioButton android:id="@+id/rbAlcoholicNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
                 </RadioGroup>
-                <EditText android:id="@+id/etAlcoholicStoppedTime" style="@style/Widget.App.EditText.Underline" android:hint="Se parou, há quanto tempo?" android:visibility="gone" tools:visibility="visible" android:layout_width="match_parent" android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:id="@+id/llAlcoholicStoppedTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+                    <EditText android:id="@+id/etAlcoholicStoppedTime" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Se parou, há quanto tempo?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                </LinearLayout>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -236,25 +308,32 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_marginTop="24dp">
+            android:layout_marginTop="24dp"
+            android:paddingBottom="16dp">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonBack"
-                style="@style/Widget.App.Button.Outlined"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Voltar"
-                android:layout_marginEnd="8dp"/>
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="@color/verde"
+                android:paddingVertical="12dp"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonNext"
-                style="@style/Widget.App.Button.Green"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginStart="8dp"
-                android:text="Avançar" />
+                android:text="Avançar"
+                android:backgroundTint="@color/verde"
+                android:paddingVertical="12dp"
+                android:textColor="@color/white"
+                app:cornerRadius="8dp"/>
         </LinearLayout>
 
     </LinearLayout>
