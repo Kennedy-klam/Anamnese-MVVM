@@ -1,340 +1,340 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/cinza"
-    tools:context=".ui.HealthHistoryFragment">
-
-    <LinearLayout
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="2">
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilVision"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_marginEnd="4dp"
-                android:hint="Visão"
-                android:textColorHint="@color/white"
-                app:boxBackgroundColor="@color/verde"
-                app:endIconTint="@color/white">
-                <AutoCompleteTextView
-                    android:id="@+id/autoCompleteVision"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:textColor="@color/white"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilHearing"
-                style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_marginStart="4dp"
-                android:hint="Audição"
-                android:textColorHint="@color/white"
-                app:boxBackgroundColor="@color/verde"
-                app:endIconTint="@color/white">
-                <AutoCompleteTextView
-                    android:id="@+id/autoCompleteHearing"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="none"
-                    android:textColor="@color/white"/>
-            </com.google.android.material.textfield.TextInputLayout>
-        </GridLayout>
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:columnCount="2">
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_marginEnd="4dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="12dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Continência urinária:" android:textColor="@color/preto_claro" />
-                    <RadioGroup android:id="@+id/rgUrinary" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                        <RadioButton android:id="@+id/rbUrinaryYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <RadioButton android:id="@+id/rbUrinaryNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
-                    </RadioGroup>
-
-                    <LinearLayout
-                        android:id="@+id/llUrinaryDate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        tools:visibility="visible">
-                        <EditText android:id="@+id/etUrinaryDate" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Data:" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_marginStart="4dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="12dp">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="12dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Continência fecal:" android:textColor="@color/preto_claro"/>
-                    <RadioGroup android:id="@+id/rgFecal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                        <RadioButton android:id="@+id/rbFecalYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <RadioButton android:id="@+id/rbFecalNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
-                    </RadioGroup>
-
-                    <LinearLayout
-                        android:id="@+id/llFecalDate"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        tools:visibility="visible">
-                        <EditText android:id="@+id/etFecalDate" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Data:" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </GridLayout>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="12dp">
-            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:text="Sono:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/rgSleep" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/rbSleepNormal" android:text="Normal" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioButton android:id="@+id/rbSleepDisorder" android:text="Distúrbios" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
-                </RadioGroup>
-
-                <LinearLayout
-                    android:id="@+id/llSleepDetails"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    tools:visibility="visible">
-                    <EditText android:id="@+id/etSleepDetails" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Quais?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:columnCount="2">
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_marginEnd="4dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="12dp">
-                <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:text="Uso de órtese:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioGroup android:id="@+id/rgOrthosis" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                        <RadioButton android:id="@+id/rbOrthosisYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <RadioButton android:id="@+id/rbOrthosisNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
-                    </RadioGroup>
-
-                    <LinearLayout
-                        android:id="@+id/llOrthosisDetails"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        tools:visibility="visible">
-                        <EditText android:id="@+id/etOrthosisDetails" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Quais?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_marginStart="4dp"
-                app:cardBackgroundColor="@color/white"
-                app:cardCornerRadius="12dp">
-                <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <TextView android:text="Uso de prótese:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioGroup android:id="@+id/rgProsthesis" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                        <RadioButton android:id="@+id/rbProsthesisYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                        <RadioButton android:id="@+id/rbProsthesisNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
-                    </RadioGroup>
-
-                    <LinearLayout
-                        android:id="@+id/llProsthesisDetails"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:visibility="gone"
-                        tools:visibility="visible">
-                        <EditText android:id="@+id/etProsthesisDetails" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Quais?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
-                    </LinearLayout>
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
-        </GridLayout>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="12dp">
-            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:text="Queda nos últimos 12 meses:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/rgFall" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/rbFallYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioButton android:id="@+id/rbFallNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
-                </RadioGroup>
-
-                <LinearLayout
-                    android:id="@+id/llFallDetails"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:visibility="gone"
-                    tools:visibility="visible">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Quantas:"
-                        android:textColor="@color/preto_claro"
-                        android:layout_marginEnd="8dp"/>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/tilFallCount"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:boxBackgroundColor="@color/white">
-                        <AutoCompleteTextView
-                            android:id="@+id/autoCompleteFallCount"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="none" />
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="12dp">
-            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:text="Fuma:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/rgSmoker" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/rbSmokerYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioButton android:id="@+id/rbSmokerNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
-                </RadioGroup>
-
-                <LinearLayout
-                    android:id="@+id/llSmokerStoppedTime"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    tools:visibility="visible">
-                    <EditText android:id="@+id/etSmokerStoppedTime" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Se parou, há quanto tempo?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="12dp">
-            <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
-                <TextView android:text="Etilista:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                <RadioGroup android:id="@+id/rgAlcoholic" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                    <RadioButton android:id="@+id/rbAlcoholicYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-                    <RadioButton android:id="@+id/rbAlcoholicNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
-                </RadioGroup>
-
-                <LinearLayout
-                    android:id="@+id/llAlcoholicStoppedTime"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:visibility="gone"
-                    tools:visibility="visible">
-                    <EditText android:id="@+id/etAlcoholicStoppedTime" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Se parou, há quanto tempo?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
-                </LinearLayout>
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="16dp"
-            android:visibility="gone" />
+        android:layout_height="match_parent"
+        android:background="@color/cinza"
+        tools:context=".ui.HealthHistoryFragment">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_marginTop="24dp"
-            android:paddingBottom="16dp">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonBack"
-                android:layout_width="0dp"
+            <GridLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Voltar"
-                android:layout_marginEnd="8dp"
-                android:backgroundTint="@color/verde"
-                android:paddingVertical="12dp"
-                android:textColor="@color/white"
-                app:cornerRadius="8dp"/>
+                android:columnCount="2">
 
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/buttonNext"
-                android:layout_width="0dp"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilVision"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="4dp"
+                    android:hint="Visão"
+                    android:textColorHint="@color/white"
+                    app:boxBackgroundColor="@color/verde"
+                    app:endIconTint="@color/white">
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteVision"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:textColor="@color/white"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilHearing"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="4dp"
+                    android:hint="Audição"
+                    android:textColorHint="@color/white"
+                    app:boxBackgroundColor="@color/verde"
+                    app:endIconTint="@color/white">
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteHearing"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:textColor="@color/white"/>
+                </com.google.android.material.textfield.TextInputLayout>
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="8dp"
-                android:text="Avançar"
-                android:backgroundTint="@color/verde"
-                android:paddingVertical="12dp"
-                android:textColor="@color/white"
-                app:cornerRadius="8dp"/>
+                android:layout_marginTop="16dp"
+                android:columnCount="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="4dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="12dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Continência urinária:" android:textColor="@color/preto_claro" />
+                        <RadioGroup android:id="@+id/rgUrinary" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <RadioButton android:id="@+id/rbUrinaryYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <RadioButton android:id="@+id/rbUrinaryNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/llUrinaryDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+                            <EditText android:id="@+id/etUrinaryDate" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Data:" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="4dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="12dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Continência fecal:" android:textColor="@color/preto_claro"/>
+                        <RadioGroup android:id="@+id/rgFecal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <RadioButton android:id="@+id/rbFecalYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <RadioButton android:id="@+id/rbFecalNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/llFecalDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+                            <EditText android:id="@+id/etFecalDate" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Data:" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </GridLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp">
+                <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="Sono:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioGroup android:id="@+id/rgSleep" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/rbSleepNormal" android:text="Normal" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioButton android:id="@+id/rbSleepDisorder" android:text="Distúrbios" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/llSleepDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+                        <EditText android:id="@+id/etSleepDetails" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Quais?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:columnCount="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginEnd="4dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="12dp">
+                    <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:text="Uso de órtese:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioGroup android:id="@+id/rgOrthosis" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <RadioButton android:id="@+id/rbOrthosisYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <RadioButton android:id="@+id/rbOrthosisNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/llOrthosisDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+                            <EditText android:id="@+id/etOrthosisDetails" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Quais?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="4dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="12dp">
+                    <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <TextView android:text="Uso de prótese:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioGroup android:id="@+id/rgProsthesis" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                            <RadioButton android:id="@+id/rbProsthesisYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                            <RadioButton android:id="@+id/rbProsthesisNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/llProsthesisDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            tools:visibility="visible">
+                            <EditText android:id="@+id/etProsthesisDetails" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Quais?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </GridLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp">
+                <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="Queda nos últimos 12 meses:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioGroup android:id="@+id/rgFall" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/rbFallYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioButton android:id="@+id/rbFallNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/llFallDetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Quantas:"
+                            android:textColor="@color/preto_claro"
+                            android:layout_marginEnd="8dp"/>
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilFallCount"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            app:boxBackgroundColor="@color/white">
+                            <AutoCompleteTextView
+                                android:id="@+id/autoCompleteFallCount"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="none" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp">
+                <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="Fuma:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioGroup android:id="@+id/rgSmoker" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/rbSmokerYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioButton android:id="@+id/rbSmokerNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/llSmokerStoppedTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+                        <EditText android:id="@+id/etSmokerStoppedTime" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Se parou, há quanto tempo?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="12dp">
+                <LinearLayout android:orientation="vertical" android:padding="12dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:text="Etilista:" android:textColor="@color/preto_claro" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                    <RadioGroup android:id="@+id/rgAlcoholic" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                        <RadioButton android:id="@+id/rbAlcoholicYes" android:text="Sim" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+                        <RadioButton android:id="@+id/rbAlcoholicNo" android:text="Não" android:textColor="@color/preto_claro" app:buttonTint="@color/laranja" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp"/>
+                    </RadioGroup>
+
+                    <LinearLayout
+                        android:id="@+id/llAlcoholicStoppedTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+                        <EditText android:id="@+id/etAlcoholicStoppedTime" android:background="@drawable/borda_arredondada_branca" android:padding="12dp" android:hint="Se parou, há quanto tempo?" android:layout_width="match_parent" android:layout_height="wrap_content" android:textSize="14sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp"
+                android:paddingBottom="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonBack"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Voltar"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/verde"
+                    android:paddingVertical="12dp"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonNext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:text="Avançar"
+                    android:backgroundTint="@color/verde"
+                    android:paddingVertical="12dp"
+                    android:textColor="@color/white"
+                    app:cornerRadius="8dp"/>
+            </LinearLayout>
+
         </LinearLayout>
-
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>

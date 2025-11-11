@@ -5,7 +5,7 @@
     </style>
 
     <style name="Widget.App.Dropdown" parent="Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu">
-        <item name="boxBackgroundColor">@color/app_green_dark</item>
+        <item name="boxBackgroundColor">@color/verde</item>
         <item name="android:textColorHint">@color/white</item>
         <item name="hintTextColor">@color/white</item>
         <item name="android:textColor">@color/white</item>
@@ -21,7 +21,7 @@
     </style>
 
     <style name="Widget.App.Button.Green" parent="Widget.Material3.Button">
-        <item name="android:backgroundTint">@color/app_green_dark</item>
+        <item name="android:backgroundTint">@color/verde</item>
         <item name="android:textColor">@color/white</item>
         <item name="cornerRadius">12dp</item>
         <item name="android:paddingTop">12dp</item>
@@ -34,22 +34,22 @@
     </style>
 
     <style name="Widget.App.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
-        <item name="android:textColor">@color/app_radio_unselected</item>
-        <item name="strokeColor">@color/app_radio_unselected</item>
+        <item name="android:textColor">@color/cinza_claro</item>
+        <item name="strokeColor">@color/cinza_claro</item>
         <item name="cornerRadius">12dp</item>
         <item name="android:paddingTop">12dp</item>
         <item name="android:paddingBottom">12dp</item>
     </style>
 
     <style name="Widget.App.EditText" parent="Widget.AppCompat.EditText">
-        <item name="android:textColorHint">@color/app_radio_unselected</item>
-        <item name="android:backgroundTint">@color/app_radio_unselected</item>
+        <item name="android:textColorHint">@color/cinza_claro</item>
+        <item name="android:backgroundTint">@color/cinza_claro</item>
         <item name="android:textSize">14sp</item>
     </style>
 
     <style name="Widget.App.EditText.Underline" parent="Widget.AppCompat.EditText">
-        <item name="android:textColorHint">@color/app_radio_unselected</item>
-        <item name="android:backgroundTint">@color/app_radio_unselected</item>
+        <item name="android:textColorHint">@color/cinza_claro</item>
+        <item name="android:backgroundTint">@color/cinza_claro</item>
         <item name="android:textSize">14sp</item>
         <item name="android:paddingStart">0dp</item>
         <item name="android:paddingEnd">0dp</item>
@@ -58,9 +58,9 @@
     </style>
 
     <style name="Widget.App.TextInputLayout.Outlined" parent="Widget.Material3.TextInputLayout.OutlinedBox">
-        <item name="android:textColorHint">@color/app_radio_unselected</item>
-        <item name="hintTextColor">@color/app_radio_unselected</item>
-        <item name="boxStrokeColor">@color/app_radio_unselected</item>
+        <item name="android:textColorHint">@color/cinza_claro</item>
+        <item name="hintTextColor">@color/cinza_claro</item>
+        <item name="boxStrokeColor">@color/cinza_claro</item>
         <item name="boxCornerRadiusTopStart">8dp</item>
         <item name="boxCornerRadiusTopEnd">8dp</item>
         <item name="boxCornerRadiusBottomStart">8dp</item>
